@@ -1,0 +1,1 @@
+powershell -File LCMBackup.ps1 Sample.xml
