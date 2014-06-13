@@ -9,15 +9,15 @@
 #
 # ------------------------------------------------------------------------
 
-$epm_instance_home = "E:\Oracle\Middleware\user_projects\epmsystem-FDN"
-$epm_home = "E:\Oracle\Middleware\EPMSystem11R1"
+$epm_instance_home = "E:\Oracle\Middleware\user_projects\epmsystem<instance>"
+$epm_home = "X:\Oracle\Middleware\EPMSystem11R1"
 $lcm_utilty = "\bin\Utility.bat"
 $output_path = ".\BackupFiles"
 $date = Get-Date
 $keep = 30
 $dateformat = "yyyyMMdd"
 $log_path = ".\Logs\"
-$email_address_list = "keith.kikta@epmintelligence.com"
+$email_address_list = "email@address.com"
 
 function create-7zip([String] $aDirectory, [String] $aZipfile){
     [string]$pathToZipExe = "C:\Program Files\7-zip\7z.exe";
@@ -38,7 +38,7 @@ function emailOnError([String] $log_path, $dateToken, [String] $email_address_li
 	{
 		Write-Host "Sending Email";
 		#SMTP server name
-		$smtpServer = "pdchcaa.parkerdrilling.com";
+		$smtpServer = "smtp.emailserver.com";
 		
 		#Creating a Mail object
 		$msg = new-object Net.Mail.MailMessage;
@@ -46,8 +46,8 @@ function emailOnError([String] $log_path, $dateToken, [String] $email_address_li
 		#Creating SMTP server object
 		$smtp = new-object Net.Mail.SmtpClient($smtpServer);
 		#Email structure
-		$msg.From = "lcm@parkerdrilling.com";
-		$msg.ReplyTo = "no-reply@parkerdrilling.com";
+		$msg.From = "lcm@address.com";
+		$msg.ReplyTo = "no-reply@address.com";
 		$addresses = $email_address_list.split(',');
 		for ($i = 0; $i -lt $addresses.Count; $i++)
 		{
