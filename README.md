@@ -3,14 +3,14 @@ This PowerShell script executes Oracle EPM Life Cycle Management backups.
 
 ##Features
 * Uses Standard LCM XML file to control backup
-* Files are zipped using [7-Zip][7zip]
+* Files are zipped using [7-Zip][zip]
 * Zip file is timestamped
 * Retention policy removes old backups from folder
 * Available functionality for generating an email indicating the status (success or fail) of the backup operation
 
 #Requirements
 * Script must run on machine where EPM is installed.
-* [7-Zip][7zip]
+* [7-Zip][zip]
 
 ## Boring legal stuff
 Copyright (c) 2014, Keith Kikta
@@ -33,4 +33,4 @@ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWIS
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
 POSSIBILITY OF SUCH DAMAGE.
 
-[7zip] : http://7-zip.org
+[zip] : http://7-zip.org
