@@ -8,11 +8,11 @@ This PowerShell script executes Oracle EPM Life Cycle Management backups.
 * Retention policy removes old backups from folder
 * Available functionality for generating an email indicating the status (success or fail) of the backup operation
 
-#Requirements
+###Requirements
 * Script must run on machine where EPM is installed.
 * [7-Zip][zip]
 
-## Boring legal stuff
+### Boring legal stuff
 Copyright (c) 2014, Keith Kikta
 All rights reserved.
 
