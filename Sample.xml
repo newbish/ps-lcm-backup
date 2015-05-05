@@ -4,12 +4,12 @@
     <User name="user" password="password"/>
 	<Task>
         <Source type="Application" product="ESB" project="EssbaseCluster-1" application="EssbaseCluster-1"/>
-        <Target type="FileSystem" filePath="/{Date}/Essbase"/>
+        <Target type="FileSystem" filePath="/Essbase"/>
         <Artifact recursive="true" parentPath="/Substitution Variables" pattern="*"/>
     </Task>
 	<Task>
         <Source type="Application" product="CALC" project="Foundation" application="Calculation Manager"/>
-        <Target type="FileSystem" filePath="/{Date}/CALC-Calculation Manager"/>
+        <Target type="FileSystem" filePath="/CALC-Calculation Manager"/>
         <Artifact recursive="true" parentPath="/Consolidation" pattern="*"/>
         <Artifact recursive="true" parentPath="/Essbase" pattern="*"/>
         <Artifact recursive="true" parentPath="/Planning" pattern="*"/>
