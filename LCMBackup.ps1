@@ -15,7 +15,7 @@ $lcm_utilty = "\bin\Utility.bat"
 $output_path = ".\BackupFiles"
 $date = Get-Date
 $keep = 30
-$dateformat = "yyyyMMdd"
+$dateformat = "yyyyMMdd-HHmm"
 $log_path = ".\Logs\"
 $email_address_list = "email@address.com"
 
@@ -62,6 +62,12 @@ function emailOnError([String] $log_path, $dateToken, [String] $email_address_li
 	}
 }
 
+function GenerateXML([String] $source, [String] $destination, [String] $dateToken) { 
+	#Create Directory
+	New-Item $dateToken -type directory
+	Copy-Item $source -Destination $destination
+}
+
 # Create zip file path based on value in output_path.
 IF ($output_path.length -ne 0)
 {
@@ -72,12 +78,9 @@ IF ($output_path.length -ne 0)
 }
 
 # Generate name for output file
-$output_file = "temp" + $date.ToString($dateformat) + ".xml"
+$output_file = $date.ToString($dateformat) + "\temp" + $date.ToString($dateformat) + ".xml"
 $log_file = getLog $log_path $date.ToString($dateformat)
-# Replace {Date} with the current date in the xml file
-(Get-Content $args[0]) |
-Foreach-Object {$_ -replace "{Date}", $date.ToString($dateformat)} |
-Set-Content $output_file
+GenerateXML $args[0] $output_file $date.ToString($dateformat)
 
 # Build command for  LCM Utility
 $command = $epm_instance_home + $lcm_utilty
