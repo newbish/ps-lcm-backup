@@ -1,7 +1,10 @@
 ##2015-05-05
+ - Replaced DOS based directory removal with PowerShell syntax
+
 Bugfixes:
  - Updated for compatibility with 11.1.2.3.5XX
  - Moved datestamp from XML to folder creation to fix issues with Essbase data not extracting to the correct folder for the zip.
+ - Removed seperate removal of XML since its now contained in date stamp folder.
  
 ##2014-06-13
  - Changed license from 2-clause BSD to 1-clause since clause 2 does not apply to powershell scripts.

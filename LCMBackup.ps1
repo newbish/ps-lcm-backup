@@ -90,14 +90,9 @@ invoke-expression "$command $output_file > $log_file"
 
 # Create zip archive of LCM Extract
 create-7zip $date.ToString($dateformat) $zipfile
+
 # Remove directory created by LCM Utility
-#Remove-Item $date.ToString($dateformat) -Force -recurse
-$removefolder = $date.ToString($dateformat)
-Cmd /C "rmdir /S /Q $removefolder"
-# Remove temporary xml file when number of arguments is 1
-IF ($args.length -eq 1) {
-	Remove-Item $output_file -Force
-}
+Remove-Item $date.ToString($dateformat) -Force -Recurse
 
 # Get list of 7zip files in output directory
 $files = Get-ChildItem $output_path\*.7z
